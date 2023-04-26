@@ -1,12 +1,20 @@
 import React from "react";
 
 function ProjectItem({ name, about, technologies }) {
+
+  const technologiesList = technologies.map((technology)=>{
+    return <span key={technology} className="btn btn-default" style={{backgroundColor: "aquamarine",
+     width: "fit-content",
+    padding:"2px",
+  margin:"5px"}}>{technology}</span>
+  })
+
   return (
     <div className="project-item">
       <h3>{name}</h3>
       <p>{about}</p>
       <div className="technologies">
-        {/* render a <span> for each technology in the technologies array */}
+        {technologiesList}
       </div>
     </div>
   );
